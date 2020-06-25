@@ -1,0 +1,838 @@
+@charset "UTF-8";
+/* Variables Globales */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html p,
+html h1,
+html h2,
+html img,
+html iframe,
+html section,
+html div,
+html footer,
+html ul,
+html li {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+header {
+  width: 100%;
+}
+
+h1,
+h2 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 36px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 42px;
+}
+
+p {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 16px;
+  color: #060A24;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 22px;
+  background: #00F3BB;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cont-lat16px {
+  margin: 0 16px;
+}
+
+@media screen and (min-width: 321px) {
+  h1 {
+    font-size: 64px;
+  }
+  h2 {
+    font-size: 48px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  a {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .cont-lat16px {
+    margin: 0 5%;
+  }
+  .p-temas {
+    font-size: 24px;
+    color: #060A24;
+    letter-spacing: 0;
+    text-align: center;
+  }
+}
+
+/* ***************************************************************************************************** */
+/* Barra de navegacion */
+.menu-hamburguesa {
+  height: 44px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu-hamburguesa img {
+  margin: 10px 0 10px 16px;
+}
+
+.menu-hamburguesa nav {
+  margin: 16px 19px 16px 0;
+}
+
+.menu-hamburguesa nav ul {
+  width: 100%;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  overflow: hidden;
+  background: #0000A3;
+  height: 0;
+}
+
+.menu-hamburguesa nav ul li {
+  border: .001px solid #0000A3;
+}
+
+.menu-hamburguesa nav ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  height: 28px;
+  background: #0000A3;
+}
+
+.menu-hamburguesa nav ul li:nth-of-type(1) a {
+  width: 87px;
+  margin: 16px 217px 16px 16px;
+}
+
+.menu-hamburguesa nav ul li:nth-of-type(2) a {
+  width: 77px;
+  margin: 16px 227px 16px 16px;
+}
+
+.menu-hamburguesa nav ul li:nth-of-type(3) a {
+  width: 106px;
+  margin: 16px 198px 16px 16px;
+}
+
+.menu-hamburguesa nav ul li:nth-of-type(4) a {
+  width: 68px;
+  margin: 16px 236px 24px 16px;
+}
+
+/* Conetenedor Titulo */
+.titulo h1 {
+  padding-top: 29px;
+}
+
+.titulo h1 span:nth-of-type(1) {
+  width: 85px;
+}
+
+.titulo h1 span:nth-of-type(2) {
+  width: 101px;
+  text-decoration: line-through;
+}
+
+.titulo h1 span:nth-of-type(3) {
+  width: 212px;
+}
+
+.titulo p {
+  /* content: 'Un podcast que explora el mundo de la programación. Nuevos episodios, todos los jueves cada 15 días.'; */
+  margin-top: 16px;
+  height: 66px;
+  width: 288px;
+  text-align: justify;
+}
+
+.titulo .conoce-mas {
+  margin-top: 36px;
+  margin: 36px 0 24px;
+}
+
+.titulo .conoce-mas a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 48px;
+}
+
+.fx-bg a:hover {
+  background: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+  color: #fff;
+}
+
+.texto::before {
+  content: 'Un podcast que explora el mundo de la programación. Nuevos episodios, todos los jueves cada 15 días.';
+}
+
+.titulo h1 span:nth-of-type(3)::before {
+  content: '\A';
+  white-space: pre;
+}
+
+.titulo h1 span:last-child::after {
+  content: '.';
+  color: #000000;
+}
+
+/*posicion absolute para que se posicione debajo del resto del header - top medida del header*/
+header nav .menu ul li a:hover {
+  color: #00F3BB;
+  text-decoration: line-through;
+}
+
+header nav .menu input[type="checkbox"]:checked ~ ul {
+  height: 256px;
+}
+
+/*checkbox transparente y en primer plano*/
+header nav .menu input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+}
+
+/*span -lineas del menu hamburguesa-*/
+header nav .menu span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin-bottom: 3px;
+  position: relative;
+  background: #000;
+  z-index: 1;
+  -webkit-transform-origin: 3px 0px;
+          transform-origin: 3px 0px;
+}
+
+header nav .menu span:first-child {
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+header nav .menu span:nth-last-child(2) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+/*movimiento a cruz*/
+header nav .menu input:checked ~ span {
+  opacity: 1;
+  -webkit-transform: rotate(45deg) translate(2px, 1px);
+          transform: rotate(45deg) translate(2px, 1px);
+}
+
+header nav .menu input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+          transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+header nav .menu input:checked ~ span:nth-last-child(2) {
+  -webkit-transform: rotate(-45deg) translate(1px, 0px);
+          transform: rotate(-45deg) translate(1px, 0px);
+}
+
+@media screen and (min-width: 321px) {
+  header .menu-hamburguesa {
+    height: 80px;
+  }
+  header .menu-hamburguesa img {
+    margin: 22px 0 22px 100px;
+    height: 36px;
+    width: 36px;
+  }
+  header .menu-hamburguesa nav {
+    margin: 26px 100px 26px 0;
+  }
+  header .menu-hamburguesa nav .menu ul {
+    position: relative;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    background: unset;
+    height: unset;
+  }
+  header .menu-hamburguesa nav .menu ul li {
+    margin: 0 48px 0 0;
+    /* padding: unset; */
+    display: inline-block;
+    border: none;
+  }
+  header .menu-hamburguesa nav .menu ul li a {
+    margin: unset;
+    padding: unset;
+    line-height: unset;
+    background: unset;
+    color: #000;
+  }
+  header .menu-hamburguesa nav .menu ul li:nth-of-type(4) {
+    margin-right: 0;
+  }
+  header .titulo {
+    height: unset;
+  }
+  header .titulo h1 {
+    width: 740px;
+    height: 84px;
+    padding-top: unset;
+    margin-top: 120px;
+  }
+  header .titulo h1 span:nth-of-type(3)::before {
+    white-space: unset;
+  }
+  header .titulo p {
+    width: 628px;
+    height: 48px;
+    margin-top: unset;
+  }
+  header .titulo .conoce-mas {
+    margin-top: 56px;
+    margin-bottom: 5px;
+  }
+  header .titulo .conoce-mas a {
+    width: 226px;
+    height: 56px;
+  }
+  .texto::before {
+    content: 'El portal de podcasts que explora el mundo de la programación y la tecnología. Nuevos episodios, todos los jueves cada 15 días.';
+  }
+  .titulo h1 span:last-child::after {
+    content: '.';
+    color: #0000EC;
+  }
+  header nav .menu ul li:hover {
+    background: unset;
+  }
+  header nav .menu ul li a:hover {
+    color: #00F3BB;
+    text-decoration: line-through;
+  }
+  header nav .menu input {
+    display: none;
+  }
+  header nav .menu span {
+    display: none;
+  }
+}
+
+/* ***************************************************************************************************** */
+/* .btn-body {
+    .btn-body:hover {
+        animation: btn-bdy 1s infinite; */
+/* background: #00F3BB; */
+/*         background-color: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+    }
+}
+
+@keyframes btn-bdy {
+    0% {
+        background: #00F3BB;
+    }
+    100% {
+        background: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+    } 
+
+
+}*/
+.episodios {
+  top: 367px;
+  height: 1203.5px;
+  background: #0000A3;
+  -webkit-clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 5%);
+          clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 5%);
+}
+
+.episodios h2 {
+  margin: 0;
+  padding: 0;
+  padding-top: 64px;
+  padding-left: 16px;
+  padding-bottom: 21px;
+  color: #ffffff;
+}
+
+.episodios div {
+  width: 298px;
+  height: 225px;
+  margin: 0 11px;
+}
+
+.episodios .ep1,
+.episodios .ep2,
+.episodios .ep3 {
+  margin-bottom: 11px;
+}
+
+@media only screen and (min-width: 321px) {
+  .episodios {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 186px 62px 26px 232px 72px 232px 232px;
+    -ms-grid-columns: 100px 584px 72px 584px 100px;
+        grid-template: 186px 62px 26px 232px 72px 232px 232px / 100px 584px 72px 584px 100px;
+    height: 1042px;
+    -webkit-clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 15%);
+            clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 15%);
+  }
+  .episodios h2 {
+    margin: 0;
+    padding: 0 0 0 100px;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-area: 2 / 2 / 3 / 3;
+    height: 100%;
+    width: 209px;
+  }
+  .episodios div {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .episodios .ep1 {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-area: 4 / 2 / 5 / 3;
+  }
+  .episodios .ep2 {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 1;
+    grid-area: 4 / 4 / 5 / 5;
+  }
+  .episodios .ep3 {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-area: 6 / 2 / 7 / 3;
+  }
+  .episodios .ep4 {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 1;
+    grid-area: 6 / 4 / 7 / 5;
+  }
+}
+
+.de-donde-venimos {
+  height: 850px;
+}
+
+.de-donde-venimos img {
+  text-align: center;
+  width: 360px;
+  height: 519px;
+  float: left;
+  margin: -96px -18px 0;
+  position: relative;
+}
+
+.de-donde-venimos .orientacion-vertical {
+  float: left;
+  margin-top: 27px;
+}
+
+.de-donde-venimos .orientacion-vertical h2 {
+  height: 84px;
+}
+
+.de-donde-venimos .orientacion-vertical p {
+  text-align: justify;
+  margin-top: 8px;
+  height: 254px;
+}
+
+@media only screen and (min-width: 321px) {
+  .de-donde-venimos {
+    max-width: 1440px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 555.4px;
+  }
+  .de-donde-venimos img {
+    float: left;
+    width: 457px;
+    height: 660px;
+    margin: -150px 62.4px 64px 200px;
+  }
+  .de-donde-venimos .orientacion-vertical,
+  .de-donde-venimos .cont-lat16px {
+    margin: 20.4px 0 0;
+  }
+  .de-donde-venimos .orientacion-vertical h2,
+  .de-donde-venimos .cont-lat16px h2 {
+    height: 62px;
+    width: 399px;
+    font-size: 48px;
+  }
+  .de-donde-venimos .orientacion-vertical p,
+  .de-donde-venimos .cont-lat16px p {
+    width: 464px;
+    height: 204px;
+    margin-top: 24px;
+    text-align: justify;
+  }
+}
+
+.invitadas {
+  height: 1556px;
+  line-height: 0.15;
+}
+
+.invitadas h2 {
+  height: 84px;
+  margin: 0 16px 14px;
+}
+
+.invitadas img {
+  width: 100%;
+  height: 243px;
+}
+
+@media only screen and (min-width: 321px) {
+  .invitadas {
+    width: 1440px;
+    height: 826px;
+  }
+  .invitadas h2 {
+    width: 481px;
+    height: 62px;
+    margin: 0 759px 36px 200px;
+  }
+  .invitadas .contentimages {
+    height: 728px;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .invitadas .contentimages img {
+    width: 33.3%;
+    height: 364px;
+  }
+}
+
+.algunos-temas h2 {
+  margin: 48px 16px 24px;
+}
+
+.algunos-temas .icono1,
+.algunos-temas .icono2,
+.algunos-temas .icono3,
+.algunos-temas .icono4 {
+  margin: 0;
+  width: 320px;
+  height: 130px;
+  text-align: center;
+}
+
+.algunos-temas img {
+  margin: 13px 108px;
+  width: 104px;
+  height: 104px;
+}
+
+.algunos-temas p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 24px;
+  margin: 0 16px;
+  height: 32px;
+  text-align: center;
+}
+
+.algunos-temas .ico1 {
+  margin-bottom: 36px;
+}
+
+.algunos-temas .ico2 {
+  margin-bottom: 52px;
+}
+
+.algunos-temas .ico2 p {
+  height: 64px;
+}
+
+.algunos-temas .ico3 {
+  margin-bottom: 52px;
+}
+
+.algunos-temas .ico4 {
+  margin-bottom: 42px;
+}
+
+@media only screen and (min-width: 321px) {
+  .algunos-temas {
+    height: 426px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .algunos-temas h2 {
+    width: 586px;
+    height: 62px;
+    margin: 64px 654px 56px 200px;
+    text-align: center;
+    font-size: 48px;
+  }
+  .algunos-temas .contenedor-iconos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .algunos-temas .contenedor-iconos .ico1 {
+    margin: 0 0 200px 66px;
+    margin-left: 200px;
+    margin-bottom: 66px;
+  }
+  .algunos-temas .contenedor-iconos .ico4 p {
+    height: 64px;
+  }
+  .algunos-temas p {
+    width: 220px;
+    height: 32px;
+  }
+  .algunos-temas .icono1,
+  .algunos-temas .icono2,
+  .algunos-temas .icono3,
+  .algunos-temas .icono4 {
+    width: 260px;
+    height: 130px;
+    margin-bottom: 16px;
+  }
+  .algunos-temas img {
+    margin: 13px 78px;
+  }
+}
+
+.novedades {
+  height: 341px;
+  background: #0000A3;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+          clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+}
+
+.novedades h2 {
+  padding: 64px 16px 36px;
+  color: #ffffff;
+}
+
+.novedades a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 16px;
+  height: 48px;
+  background: #00F3BB;
+  text-decoration: none;
+  font-weight: bold;
+  color: #060A24;
+}
+
+.novedades a:hover {
+  background: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+  color: #fff;
+}
+
+@media only screen and (min-width: 321px) {
+  .novedades {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 518px;
+  }
+  .novedades h2 {
+    padding: unset;
+    margin: 213px 374px 52px 374px;
+    width: 692px;
+    height: 62px;
+    text-align: center;
+    font-size: 47px;
+  }
+  .novedades a {
+    width: 345px;
+    height: 56px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 547px 151px;
+  }
+}
+
+footer {
+  /* height: 121px; */
+}
+
+footer p {
+  margin: 24px 46px 0 47px;
+  text-align: center;
+  width: 227px;
+}
+
+footer a {
+  background: none;
+  padding: unset;
+  margin: unset;
+  width: 16px;
+  height: 28px;
+}
+
+footer a i {
+  font-family: FontAwesome5Brands-Regular;
+  font-size: 16px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 28px;
+}
+
+.iconos-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer a:nth-of-type(1) {
+  margin: 16px 19px 31px 45px;
+}
+
+footer a:nth-of-type(2),
+footer a:nth-of-type(3),
+footer a:nth-of-type(4) {
+  margin: 16px 19px 31px;
+}
+
+footer a:nth-of-type(5) {
+  margin: 16px 45px 31px 19px;
+}
+
+footer a:nth-of-type(2) {
+  width: 14px;
+}
+
+@media only screen and (min-width: 321px) {
+  footer {
+    height: 95px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  footer p {
+    width: 269px;
+    height: 28px;
+    margin: 36px 739px 31px 100px;
+  }
+  footer a:nth-of-type(1) {
+    margin: 36px 0 31px 0;
+  }
+  footer a:nth-of-type(2) {
+    margin: 36px 0 31px 36px;
+  }
+  footer a:nth-of-type(3) {
+    margin: 36px 0 31px 36px;
+  }
+  footer a:nth-of-type(4) {
+    margin: 36px 0 31px 36px;
+  }
+  footer a:nth-of-type(5) {
+    margin: 36px 100px 31px 36px;
+  }
+}
+
+/* @import "main"; */
+/*# sourceMappingURL=style.css.map */

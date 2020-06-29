@@ -42,6 +42,7 @@ h2 {
   color: #060A24;
   letter-spacing: 0;
   line-height: 42px;
+  font-weight: 400;
 }
 
 p {
@@ -67,6 +68,33 @@ a {
 
 .cont-lat16px {
   margin: 0 16px;
+}
+
+.btn-bg {
+  background-color: #00F3BB;
+}
+
+.btn-bg:hover {
+  -webkit-animation: actn 1s infinite;
+          animation: actn 1s infinite;
+}
+
+@-webkit-keyframes actn {
+  from {
+    background-color: #00F3BB;
+  }
+  to {
+    background: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+  }
+}
+
+@keyframes actn {
+  from {
+    background-color: #00F3BB;
+  }
+  to {
+    background: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+  }
 }
 
 @media screen and (min-width: 321px) {
@@ -204,11 +232,6 @@ a {
   height: 48px;
 }
 
-.fx-bg a:hover {
-  background: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
-  color: #fff;
-}
-
 .texto::before {
   content: 'Un podcast que explora el mundo de la programación. Nuevos episodios, todos los jueves cada 15 días.';
 }
@@ -271,12 +294,16 @@ header nav .menu input:checked ~ span {
   opacity: 1;
   -webkit-transform: rotate(45deg) translate(2px, 1px);
           transform: rotate(45deg) translate(2px, 1px);
+  width: 16px;
+  height: 2.5px;
 }
 
 header nav .menu input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   -webkit-transform: rotate(0deg) scale(0.2, 0.2);
           transform: rotate(0deg) scale(0.2, 0.2);
+  width: 16px;
+  height: 2.5px;
 }
 
 header nav .menu input:checked ~ span:nth-last-child(2) {
@@ -285,6 +312,9 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 }
 
 @media screen and (min-width: 321px) {
+  header {
+    width: 1440px;
+  }
   header .menu-hamburguesa {
     height: 80px;
   }
@@ -306,7 +336,6 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
   }
   header .menu-hamburguesa nav .menu ul li {
     margin: 0 48px 0 0;
-    /* padding: unset; */
     display: inline-block;
     border: none;
   }
@@ -316,6 +345,10 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     line-height: unset;
     background: unset;
     color: #000;
+    font-weight: 500;
+  }
+  header .menu-hamburguesa nav .menu ul li a:active {
+    color: rgba(6, 10, 36, 0.56);
   }
   header .menu-hamburguesa nav .menu ul li:nth-of-type(4) {
     margin-right: 0;
@@ -365,27 +398,11 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
   header nav .menu span {
     display: none;
   }
+  .cont-lat16px {
+    margin: 0 0 0 200px;
+  }
 }
 
-/* ***************************************************************************************************** */
-/* .btn-body {
-    .btn-body:hover {
-        animation: btn-bdy 1s infinite; */
-/* background: #00F3BB; */
-/*         background-color: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
-    }
-}
-
-@keyframes btn-bdy {
-    0% {
-        background: #00F3BB;
-    }
-    100% {
-        background: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
-    } 
-
-
-}*/
 .episodios {
   top: 367px;
   height: 1203.5px;
@@ -417,6 +434,7 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 
 @media only screen and (min-width: 321px) {
   .episodios {
+    width: 1440px;
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: 186px 62px 26px 232px 72px 232px 232px;
@@ -541,6 +559,8 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 .invitadas {
   height: 1556px;
   line-height: 0.15;
+  /* position: relative;
+    top: 96px; */
 }
 
 .invitadas h2 {
@@ -613,6 +633,7 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
   margin: 0 16px;
   height: 32px;
   text-align: center;
+  font-weight: 500;
 }
 
 .algunos-temas .ico1 {
@@ -693,6 +714,7 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 .novedades h2 {
   padding: 64px 16px 36px;
   color: #ffffff;
+  text-align: center;
 }
 
 .novedades a {
@@ -720,6 +742,7 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 
 @media only screen and (min-width: 321px) {
   .novedades {
+    width: 1440px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -754,6 +777,7 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 }
 
 footer {
+  width: 1440px;
   /* height: 121px; */
 }
 

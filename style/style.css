@@ -31,10 +31,6 @@ body {
   font-family: sans-serif;
 }
 
-header {
-  width: 100%;
-}
-
 h1,
 h2 {
   font-family: 'IBM Plex Sans', sans-serif;
@@ -124,6 +120,10 @@ a {
 }
 
 /* ***************************************************************************************************** */
+header {
+  width: 320px;
+}
+
 /* Barra de navegacion */
 .menu-hamburguesa {
   height: 44px;
@@ -426,6 +426,10 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
   margin: 0 11px;
 }
 
+.episodios div iframe {
+  border: 0;
+}
+
 .episodios .ep1,
 .episodios .ep2,
 .episodios .ep3 {
@@ -460,6 +464,9 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     height: 100%;
     margin: 0;
     padding: 0;
+  }
+  .episodios div iframe {
+    width: 100%;
   }
   .episodios .ep1 {
     -ms-grid-row: 4;
@@ -658,6 +665,7 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 
 @media only screen and (min-width: 321px) {
   .algunos-temas {
+    width: 1440px;
     height: 426px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -776,11 +784,6 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
   }
 }
 
-footer {
-  width: 1440px;
-  /* height: 121px; */
-}
-
 footer p {
   margin: 24px 46px 0 47px;
   text-align: center;
@@ -829,6 +832,7 @@ footer a:nth-of-type(2) {
 
 @media only screen and (min-width: 321px) {
   footer {
+    width: 1440px;
     height: 95px;
     display: -webkit-box;
     display: -ms-flexbox;
